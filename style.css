@@ -1,0 +1,22 @@
+body{
+    background-color: cyan;
+}
+
+#score{
+font-size: 40px;
+margin-left: 50px;
+}
+
+#timer{
+    font-size: 40px;
+    float: right;
+    margin-right: 100px;
+}
+
+#update_name{
+    color:orange;
+}
+
+p{
+    font-size: 20px;
+}
