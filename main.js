@@ -12,3 +12,42 @@ console.log(Element_of_array);
 sketch = quick_draw_data_set[random_num];
 
 document.getElementById("update_name").innerHTML = "Sketch to be drawn : " + sketch;
+
+function setup() {
+    canvas = createCanvas(280, 280);
+    canvas.center();
+    background("white");
+}
+
+function draw() {
+    check_sketch();
+    image(canvas, 280, 280);
+    if(drawn_sketch == sketch){
+        score = score++;
+        answer_holder = "Set";
+        document.getElementById("score").innerHTML = "Score :" + score;
+    }
+}
+
+function check_sketch() {
+   timer_counter = timer_counter++;
+   document.getElementById("timer").innerHTML = "Timer :" + timer_counter; 
+   console.log(timer_counter);
+
+   if(timer_counter > 400){
+    timer_counter = 0;
+    timer_check = "Completed";
+   }
+
+   if(timer_check == "Completed" || answer_holder == "Set"){
+    timer_check = "";
+    answer_holder = "";
+    updateCanvas()
+   }
+}
+
+function clearCanvas() {
+    background("white");
+}
+
+sketch = quick_draw_data_set[random_num];
